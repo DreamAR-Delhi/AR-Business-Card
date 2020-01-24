@@ -1,19 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class ClickHandler : MonoBehaviour
 {
   string githubUrl = "https://github.com/akshansh2000";
-  string linkedinUrl = "https://linkedin.com/in/akshansh2000";
   string resumeUrl = "https://drive.google.com/open?id=1Fo3DassNroZhyX194y0XnZhFfZDzVvRA";
-  public GameObject aboutMe;
-  bool isAboutMeActive = false;
+  public GameObject aboutMe, myHobbies;
+  bool isAboutMeActive = false, isHobbiesActive = false;
 
   void Start()
   {
     aboutMe.SetActive(false);
+    myHobbies.SetActive(false);
   }
 
   void Update()
@@ -33,8 +32,9 @@ public class ClickHandler : MonoBehaviour
           case "resume":
             Application.OpenURL(resumeUrl);
             break;
-          case "linkedin":
-            Application.OpenURL(linkedinUrl);
+          case "hobbies":
+            isHobbiesActive = !isHobbiesActive;
+            myHobbies.SetActive(isHobbiesActive);
             break;
           case "about me":
             isAboutMeActive = !isAboutMeActive;
