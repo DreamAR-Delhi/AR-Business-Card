@@ -10,7 +10,7 @@ public class ClickHandler : MonoBehaviour
 
   void Start()
   {
-    isActive.AddRange(Enumerable.Repeat(false, size));
+    isActive.AddRange(Enumerable.Repeat(true, size));
   }
 
   void Update()
