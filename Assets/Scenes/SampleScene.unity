@@ -584,7 +584,7 @@ MeshCollider:
   m_GameObject: {fileID: 270323483}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -1145,7 +1145,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2050490190}
+  - {fileID: 2142477297}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1464,7 +1464,7 @@ MeshCollider:
   m_GameObject: {fileID: 1596920823}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -1639,7 +1639,7 @@ Transform:
   m_Father: {fileID: 853649623}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &2050490190
+--- !u!21 &2142477297
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1648,7 +1648,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: 'qr-code-emailMaterial
 
-    13140'
+    15322'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
