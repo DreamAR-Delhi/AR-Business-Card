@@ -5,12 +5,15 @@ using System.Linq;
 
 public class ClickHandler : MonoBehaviour
 {
-  public int size;
-  List<bool> isActive = new List<bool>();
+  string githubUrl = "https://github.com/akshansh2000";
+  string linkedinUrl = "https://linkedin.com/in/akshansh2000";
+  string resumeUrl = "https://drive.google.com/open?id=1Fo3DassNroZhyX194y0XnZhFfZDzVvRA";
+  public GameObject aboutMe;
+  bool isAboutMeActive = false;
 
   void Start()
   {
-    isActive.AddRange(Enumerable.Repeat(true, size));
+    aboutMe.SetActive(false);
   }
 
   void Update()
@@ -22,10 +25,22 @@ public class ClickHandler : MonoBehaviour
 
       if (Physics.Raycast(ray, out hitInfo) && hitInfo.collider.gameObject.tag == "button")
       {
-        int index = int.Parse(hitInfo.collider.gameObject.name.Split(' ')[1]) - 1;
-
-        isActive[index] = !isActive[index];
-        GameObject.Find("popup " + (index + 1).ToString()).GetComponent<Renderer>().enabled = isActive[index];
+        switch (hitInfo.collider.gameObject.name)
+        {
+          case "github":
+            Application.OpenURL(githubUrl);
+            break;
+          case "resume":
+            Application.OpenURL(resumeUrl);
+            break;
+          case "linkedin":
+            Application.OpenURL(linkedinUrl);
+            break;
+          case "about me":
+            isAboutMeActive = !isAboutMeActive;
+            aboutMe.SetActive(isAboutMeActive);
+            break;
+        }
       }
     }
   }
