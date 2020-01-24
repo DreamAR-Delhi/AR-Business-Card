@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class ClickHandler : MonoBehaviour
 {
   string githubUrl = "https://github.com/akshansh2000";
   string resumeUrl = "https://drive.google.com/open?id=1Fo3DassNroZhyX194y0XnZhFfZDzVvRA";
   public GameObject aboutMe, myHobbies;
+  public VideoPlayer videoPlayer;
   bool isAboutMeActive = false, isHobbiesActive = false;
 
   void Start()
   {
     aboutMe.SetActive(false);
     myHobbies.SetActive(false);
+
+    videoPlayer.Prepare();
   }
 
   void Update()
@@ -35,6 +39,10 @@ public class ClickHandler : MonoBehaviour
           case "hobbies":
             isHobbiesActive = !isHobbiesActive;
             myHobbies.SetActive(isHobbiesActive);
+
+            if (isHobbiesActive) videoPlayer.Play();
+            else videoPlayer.Pause();
+
             break;
           case "about me":
             isAboutMeActive = !isAboutMeActive;
